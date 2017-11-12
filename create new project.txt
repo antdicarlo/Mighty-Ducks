@@ -1,0 +1,7 @@
+1) Create new project directory
+2) vue init webpack front  -- creates a front end
+	configure proxy table
+	install axios
+3) create server directory
+	install
+4)
