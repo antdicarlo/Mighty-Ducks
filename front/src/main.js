@@ -6,6 +6,17 @@ import router from './router'
 
 Vue.config.productionTip = false
 
+import axios from 'axios';
+
+export const HTTP = axios.create({
+  baseURL: '/'
+  /*,
+  headers: {
+    Authorization: 'Bearer {token}'
+  } */ 
+})
+
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

@@ -4,3 +4,10 @@
 Pull template directory, delete /.git/ folder, then do git init etc
 Do NPM install on front folder and   server folder
 
+
+local enviorment:
+ cd front    npm run dev
+ cd server   supervisor .\index.js
+
+
+ 
