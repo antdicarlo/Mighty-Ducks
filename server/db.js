@@ -4,9 +4,9 @@ var pool  = null;
 exports.connect = function() {
   console.log('connecting');
   pool = mysql.createPool({
-    host     : '',
-    user     : '',
-    password : '',
+   host     : process.env.DB_HOST,
+    user     : process.env.DB_USER,
+    password : process.env.DB_PASSWORD,
     database : '',
     debug:false
   });
