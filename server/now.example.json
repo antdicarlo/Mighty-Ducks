@@ -1,0 +1,8 @@
+{
+  "env": {
+    "USING_NOW": "true",
+    "DB_HOST":"intelstor.cqb93xnsbho4.us-east-2.rds.amazonaws.com",
+    "DB_USER":"kooba1",
+    "DB_PASSWORD":"Fuckyou2"
+  }
+}

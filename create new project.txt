@@ -10,4 +10,5 @@ local enviorment:
  cd server   supervisor .\index.js
 
 
- 
+change  now.example.json to   now.json
+change example.env  to .env

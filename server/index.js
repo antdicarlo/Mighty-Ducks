@@ -1,3 +1,10 @@
+if (process.env.USING_NOW != 'true')  {
+	console.log("not using NOW (Development)") ;
+require('dotenv').config() ;
+} else {
+	console.log("using NOW (production");
+}
+
 var express = require('express');
 var path = require('path');
 var app = express();
