@@ -12,3 +12,6 @@ local enviorment:
 
 change  now.example.json to   now.json
 change example.env  to .env
+
+before deploying to production you must run:
+'npm run build' in the front directory
