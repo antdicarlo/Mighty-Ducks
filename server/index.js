@@ -11,6 +11,10 @@ var app = express();
 var bodyParser = require("body-parser");
 var cookieParser = require("cookie-parser");
 
+var history = require('connect-history-api-fallback'); //used for history mode, clean URLS
+app.use(history());
+
+
 var cors = require('cors');
 
 var db = require('./db');

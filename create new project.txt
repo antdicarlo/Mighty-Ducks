@@ -15,3 +15,23 @@ change example.env  to .env
 
 before deploying to production you must run:
 'npm run build' in the front directory
+
+
+change name in package.json to whatever the projectg name is  
+
+specify the database name in   db.js 
+
+-------
+
+
+NOW commands :
+now rm my-app --safe --yes        
+	this removes all deployments under my-app that don't have a domain linked to them
+
+
+If using a domain outside of now, change name servers to:  https://zeit.co/world#get-started
+
+then run command:
+now domain add yourdomain.com
+
+this should show the domain as   dns: zeit   when doing a now domains ls
