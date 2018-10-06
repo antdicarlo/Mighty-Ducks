@@ -2,11 +2,8 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import HelloWorld from '@/components/HelloWorld'
 import NotFoundComponent from '@/components/NotFoundComponent'
-import Login from '@/components/Login'
+
 //import Register from '@/components/Register'
-
-import RequireAuth from '@/requireAuth'
-
 
 
 
@@ -17,17 +14,11 @@ export default new Router({
   routes: [
   
     {
-      path: '/HelloWorld',
-      name: 'HelloWorld',
-      component: HelloWorld,
-      beforeEnter: RequireAuth
-    } ,
-    {
       path: '/',
-      name: 'Login',
-      component: Login,
-
+      name: 'HelloWorld',
+      component: HelloWorld
     } ,
+  
      { path: '*', component: NotFoundComponent }
   ]
 })

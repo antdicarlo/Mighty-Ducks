@@ -38,11 +38,11 @@ app.get( '/', function( req, res ) {
 var quotes = require('./routes/quotes');
 app.use(quotes);
 */
-/*
+
 app.get('/api/test',function(request,response){
   response.end('{"test"}');
   });
- */
+ 
  
 var router = require('./router');
 app.use(router );
