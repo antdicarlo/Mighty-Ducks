@@ -13,7 +13,6 @@
     "mysql": "^2.15.0"
   },
   "scripts": {
-    "start": "node index.js",
-    "build": "node ../front/build/build.js"
+    "start": "node index.js"
   }
 }
