@@ -2,8 +2,9 @@
 
 Summary:
 Tired of hacking all night? Frustrated with debugging? Now you can take it out on an AR debugging rubber duck!
-Open our AR game controller on your mobile device, direct the camera at a marker image, and the duck appears ready to receive
-your burning fury! Run with web sockets (NOT YET), you can fight the duck with your teammates for quicker defeat!
+Open our AR game controller on your mobile device, direct the camera at a marker image, and the duck appears ready
+to receive your burning fury! Run with web sockets (NOT YET), you can fight the duck with your teammates for
+quicker defeat!
 
 Features:
 – Mobile controller with individual player AR view of rubber duck
