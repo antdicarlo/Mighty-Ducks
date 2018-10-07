@@ -1,4 +1,5 @@
-# zombie
+# THE MIGHTY DUCKS
+as of October 7, 2018 at 07:44am
 
 Summary:
 Tired of hacking all night? Frustrated with debugging? Now you can take it out on an AR debugging rubber duck!
