@@ -13,7 +13,7 @@
 
     </script>
 <body style='margin : 0px; overflow: hidden;'>
- 
+
   <a-scene  embedded artoolkit='sourceType: webcam; sourceWidth: 240; sourceHeight: 180;' antialias="true" outline>
       <!--a-assets>
         <a-asset-item id="mymodel" src="static/busterDrone.gltf"></a-asset-item>
@@ -35,8 +35,9 @@
 <button class="button" onclick="setPosition()">Reposition</button>
 <script type="text/javascript">
    function setPosition() {
+   
      var sceneEl = document.querySelector('#myEnt');
-        sceneEl.setAttribute('position', {x: 15, y: 15,  z: 15} );
+        sceneEl.setAttribute('position', {x: 150, y: 25,  z: 150} );
     }
 </script>
 <style>
@@ -44,7 +45,7 @@
     
   bottom:30px;
   position: absolute;
-  z-index:1 ;
+  z-index:999 ;
  
     }
 </style>
