@@ -42,25 +42,13 @@
 
 </a-scene>
     
-
- <div id="victoryWrapper" class="wrapper">
-      <div class="modal">
-        <span class="emoji">👏</span>
-        <h1>The duck has been defeated!</h1>
-        <p>Great teamwork! Now get some rest!</p>
-    <!--     <a href="#" class="modal-btn">Great, now take me to my feedback</a> -->
-      </div>
-      <div id="confetti-wrapper">
-</div>
-</div>
-
 <center><button id="attackButton" class="button" onclick="attackDuck()">Attack!</button></center>
     
 <script type="text/javascript">
     var size = 1; //Size of the duck, ratio, equal to 100% size
     var position = .5; //Starting offset, modified to keep duck centered
  //   var HP = 1750; //1000 ~= 30s with 15 people playing
-    var oldHP = 2250; 
+    var oldHP = 1750; 
    
 
     var myEnt = document.querySelector('#myEnt');
@@ -111,8 +99,7 @@
      if(size>.025){
         myEnt.setAttribute('scale', {x: size, y: size,  z: size} ); //uniformly changes size of duck
         myEnt.setAttribute('position', {x: 0, y : 0, z:position}); //changes the z coordinate using position
-       
-   
+        
      }
      else{
          myEnt.setAttribute('scale',{x:0,y:0,z:0});
@@ -120,45 +107,13 @@
          audioEnd.play();        
 	     document.getElementById("attackButton").disabled = true;
          window.navigator.vibrate([350,150,350,150,350]);
-         victory(); 
-         //victoryText.setAttribute('visible',true);
-	   // victoryText.setAttribute('rotate',"90 90 90");
+         victoryText.setAttribute('visible',true);
+	 victoryText.setAttribute('rotate',"90 90 90");
      }
 
      // myEnt.setAttribute('position', {x: 0, y: 0,  z: 0} );
 
     }
-
-function victory() {
-    
-    document.getElementsByTagName('a-scene')[0].style.display = 'none'  ; 
-    document.getElementById('victoryWrapper').style.visibility = 'visible'; 
-    for(i=0; i<200; i++) {
-  // Random rotation
-  var randomRotation = Math.floor(Math.random() * 360);
-  // Random width & height between 0 and viewport
-  var randomWidth = Math.floor(Math.random() * Math.max(document.documentElement.clientWidth, window.innerWidth || 0));
-  var randomHeight =  Math.floor(Math.random() * Math.max(document.documentElement.clientHeight, window.innerHeight || 0));
-  
-  // Random animation-delay
-  var randomAnimationDelay = Math.floor(Math.random() * 10);
-  console.log(randomAnimationDelay)
-
-  // Random colors
-  var colors = ['#0CD977', '#FF1C1C', '#FF93DE', '#5767ED', '#FFC61C', '#8497B0']
-  var randomColor = colors[Math.floor(Math.random() * colors.length)];
-
-  // Create confetti piece
-  var confetti = document.createElement('div');
-  confetti.className = 'confetti';
-  confetti.style.top=randomHeight + 'px';
-  confetti.style.left=randomWidth + 'px';
-  confetti.style.backgroundColor=randomColor;
-  confetti.style.transform='skew(15deg) rotate(' + randomRotation + 'deg)';
-  confetti.style.animationDelay=randomAnimationDelay + 's';
-  document.getElementById("confetti-wrapper").appendChild(confetti);
-}
-}
 </script>
 <style>
     .button {
@@ -168,100 +123,16 @@ function victory() {
   position: absolute;
   z-index:999 ;
   border-radius: 50%;
-  padding:45px;
+  margin-left: 150px;
+  margin-right: 10px;
+  text-align: center;
+
     }
 
     .disabled{
         opacity: 0.6;
         cursor: not-allowed;
 }
-
-
-
-:root {
-  --border-color: #D7DBE3;
-  font-family: -apple-system, BlinkMacSystemFont, 'Roboto', 'Open Sans', 'Helvetica Neue', sans-serif;
-  --green: #0CD977;
-  --red: #FF1C1C;
-  --pink: #FF93DE;
-  --purple: #5767ED;
-  --yellow: #FFC61C;
-  --rotation: 0deg;
-  }
-#victoryWrapper{
-    visibility: hidden; 
-}
-.wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
-
-.modal {
-  width: 30rem;
-  margin: 0 auto;
-  border: 1px solid var(--border-color);
-  box-shadow: 0 1px 2px rgba(0,0,0,0.16);
-  background-color: #fff;
-  border-radius: 0.25rem;
-  padding: 2rem;
-  z-index: 1;
-}
-
-.emoji {
-  display: block;
-  text-align: center;
-  font-size: 5rem;
-  line-height: 5rem;
-}
-
-h1 {
-  text-align: center;
-}
-
-p {
-  padding: 0 4rem; 
-  line-height: 1.5rem;
-  text-align: center;
-}
-
-.modal-btn {
-  display: block;
-  margin: 0 -2rem -2rem -2rem;
-  padding: 1rem 2rem;
-  font-size: .75rem;
-  text-transform: uppercase;
-  text-align: center;
-  color: #fff;
-  font-weight: 600;
-  border-radius: 0 0 .25rem .25rem;
-  background-color: var(--green);
-  text-decoration: none;
-}
-
-@keyframes confettiRain {
-  0% {
-    opacity: 1;
-    margin-top: -100vh;
-    margin-left: -200px;
-  } 
-  
-  100% {
-    opacity: 1;
-    margin-top: 100vh;
-    margin-left: 200px;
-  }
-}
-
-.confetti {
-  opacity: 0;
-  position: absolute;
-  width: 1rem;
-  height: 1.5rem;
-  animation: confettiRain 5s infinite;
-}
-
 </style>
 </body>
 </html>

@@ -11,9 +11,10 @@ var app = express();
 var bodyParser = require("body-parser");
 var cookieParser = require("cookie-parser");
 
+/*
 var history = require('connect-history-api-fallback'); //used for history mode, clean URLS
 app.use(history());
-
+*/
 
 var cors = require('cors');
 
@@ -53,7 +54,7 @@ var server = app.listen(app.get('port')) ;
 var io = require('socket.io')(server , { origins: '*:*'} );
 
 
-var duckHP = 1750 ; 
+var duckHP = 2250 ; 
 
 
 
