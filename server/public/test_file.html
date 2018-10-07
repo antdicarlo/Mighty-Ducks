@@ -1,0 +1,86 @@
+<!doctype HTML>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+</head>
+<script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
+<script src="https://rawgit.com/jeromeetienne/AR.js/master/aframe/build/aframe-ar.min.js"></script>
+
+<!-- import events.js script -->
+
+<script type="text/javascript">
+
+
+    </script>
+<body style='margin : 0px; overflow: hidden;'>
+
+    <a-scene embedded arjs>
+
+        <a-assets>              <!-- link below is where the duck gltf file is located -->
+            <a-asset-item id="tree" src="https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Models/master/2.0/Duck/glTF/Duck.gltf"></a-asset-item>
+        </a-assets>
+<!-- use your gltf model -->
+
+        <a-marker preset="hiro" >   <!-- id needed to be behind the marker added id tag here -->
+            <a-entity id="myEnt"  position = "0 0 .5" scale="1 1 1" gltf-model="#tree" rotation="0 -90 90"></a-entity>
+                    <!-- don't change roation PLEASE it keeps duck facing us :) -->
+
+		<a-text id="victoryText" position = "0 0.25 0" value="The duck has been defeated!!!" visible="false"></a-entity>
+
+        </a-marker>
+        
+        <a-entity camera></a-entity>
+
+</a-scene>
+    
+<button id="attackButton" class="button" onclick="shrinkDuck()">Attack!</button>
+    
+<script type="text/javascript">
+    var size = 1;
+    var position = .5;
+   function shrinkDuck() {
+     // var sceneEl = document.querySelector('#myEnt');
+     size=size-.025;
+     position = position - .0125;
+     //rotation=90;
+     if(size>.025){
+        myEnt.setAttribute('scale', {x: size, y: size,  z: size} );
+        myEnt.setAttribute('position', {x: 0, y : 0, z:position});
+        window.navigator.vibrate(275);
+        var audio = new Audio('PEW.mp3');
+        audio.play();
+        document.getElementById("attackButton").disabled = true;
+        setTimeout(function(){document.getElementById("attackButton").disabled = false;},1000);
+     }
+     else{
+         myEnt.setAttribute('scale',{x:0,y:0,z:0});
+         var audioEnd = new Audio('VICTORY.mp3');
+         audioEnd.play();        
+	     document.getElementById("attackButton").disabled = true;
+         victoryText.setAttribute('visible',{true});
+	
+     }
+
+     // myEnt.setAttribute('position', {x: 0, y: 0,  z: 0} );
+
+    }
+</script>
+<style>
+    .button {
+
+  bottom:30px;
+  font-size: 26px;
+  position: absolute;
+  z-index:999 ;
+  border-radius: 50%;
+  margin-left: 15px;
+  margin-right: 10px;
+    }
+
+    .disabled{
+        opacity: 0.6;
+        cursor: not-allowed;
+}
+</style>
+</body>
+</html>
