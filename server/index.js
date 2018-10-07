@@ -52,17 +52,20 @@ var server = app.listen(app.get('port')) ;
 
 var io = require('socket.io')(server , { origins: '*:*'} );
 
-var numberOfMessages = 0; 
+
+var duckHP = 1750 ; 
+
 
 
 io.on('connection', function(socket) {
     console.log('connected', socket.id);
    	 
-   	 socket.on('testButton', function(data) {
-    	console.log( 'Add Appointment' , data);
-     	numberOfMessages++ ; 
-     	console.log(numberOfMessages);
-     	socket.emit('numberOfMessages', numberOfMessages );
+   	 socket.on('attackDuck', function(data) {
+    	console.log( 'Duck Attacked for damage: ' , data.damage);
+     	duckHP = duckHP - data.damage ;
+      console.log("new Duck HP is : " + duckHP)
+      io.emit('duckAttacked', { hp:duckHP });
+     	//socket.emit('numberOfMessages', numberOfMessages );
 
     });
 });
