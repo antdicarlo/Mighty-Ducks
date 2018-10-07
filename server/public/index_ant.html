@@ -46,12 +46,14 @@
         window.navigator.vibrate(275);
         var audio = new Audio('PEW.mp3');
         audio.play();
+        document.getElementById("attackButton").disabled = true;
+        setTimeout(function(){document.getElementById("attackButton").disabled = false;},1000);
      }
      else{
          myEnt.setAttribute('scale',{x:0,y:0,z:0});
          var audioEnd = new Audio('VICTORY.mp3');
          audioEnd.play();        
-	 document.getElementById("attackButton").disabled = true;
+	     document.getElementById("attackButton").disabled = true;
          alert("The duck has been defeated >:)");
      }
 
