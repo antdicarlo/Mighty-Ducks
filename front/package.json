@@ -13,9 +13,11 @@
     "build": "node build/build.js"
   },
   "dependencies": {
+    "aframe": "^0.8.2",
     "axios": "^0.17.1",
     "vue": "^2.5.2",
     "vue-router": "^3.0.1",
+    "vuejs-vr": "^1.0.7",
     "vuex": "^3.0.1"
   },
   "devDependencies": {

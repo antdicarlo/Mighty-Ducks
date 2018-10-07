@@ -47,6 +47,34 @@ app.get('/api/test',function(request,response){
 var router = require('./router');
 app.use(router );
 
-app.listen(app.get('port')) ;
+
+var server = app.listen(app.get('port')) ;
+
+var io = require('socket.io')(server , { origins: '*:*'} );
+
+var numberOfMessages = 0; 
+
+
+io.on('connection', function(socket) {
+    console.log('connected', socket.id);
+   	 
+   	 socket.on('testButton', function(data) {
+    	console.log( 'Add Appointment' , data);
+     	numberOfMessages++ ; 
+     	console.log(numberOfMessages);
+     	socket.emit('numberOfMessages', numberOfMessages );
+
+    });
+});
+
+
+
+
+
+
+
+
+app.set('socketio', io);
+
 
 console.log('Running App');

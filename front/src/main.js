@@ -18,6 +18,17 @@ export const HTTP = axios.create({
 })
 
 
+Vue.config.ignoredElements = [
+    'a-scene',
+    'a-entity',
+    'a-camera',
+    'a-box',
+    'a-sky',
+    'a-assets',
+    'a-marker',
+    'a-marker-camera'
+]
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
