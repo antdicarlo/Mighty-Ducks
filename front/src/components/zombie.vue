@@ -1,8 +1,7 @@
 <template>
   <div class="hello">
 
-    <h2>Template</h2>
-    <router-link to="zombie"> Click to link to zombie </router-link>
+    <h2>Zombie Test </h2>
 	<button @click="testAlert">Click me</button>
   </div>
 </template>

@@ -2,7 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import HelloWorld from '@/components/HelloWorld'
 import NotFoundComponent from '@/components/NotFoundComponent'
-
+import zombie from '@/components/zombie'
 //import Register from '@/components/Register'
 
 
@@ -17,6 +17,12 @@ export default new Router({
       path: '/',
       name: 'HelloWorld',
       component: HelloWorld
+    } ,
+        
+    {
+      path: '/zombie',
+      name: 'zombie',
+      component: zombie
     } ,
   
      { path: '*', component: NotFoundComponent }
