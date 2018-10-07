@@ -38,7 +38,7 @@
 <script type="text/javascript">
     var size = 1;
     var position = .5;
-    var HP = 1000; //1750 ~= 30s with 15 people playing
+    var HP = 1750; //1000 ~= 30s with 15 people playing
    function shrinkDuck() {
      // var sceneEl = document.querySelector('#myEnt');
      var damage = Math.floor(Math.random() * (5)) + 1;
@@ -51,19 +51,19 @@
         myEnt.setAttribute('position', {x: 0, y : 0, z:position});
         window.navigator.vibrate(275);
         if(damage==1){
-            var audio = new Audio('squeek_1.mp3');
+            var audio = new Audio('squeak_1.mp3');
             audio.play();
         }else if(damage==2){
-            var audio = new Audio('squeek_2.mp3');
+            var audio = new Audio('squeak_2.mp3');
             audio.play();
         }else if(damage==3){
-            var audio = new Audio('squeek_3.mp3');
+            var audio = new Audio('squeak_3.mp3');
             audio.play();
         }else if(damage==4){
-            var audio = new Audio('squeek_4.mp3');
+            var audio = new Audio('squeak_4.mp3');
             audio.play();
         }else{
-            var audio = new Audio('squeek_5.mp3');
+            var audio = new Audio('squeak_5.mp3');
             audio.play();
         }
         
