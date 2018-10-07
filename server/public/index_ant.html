@@ -14,20 +14,24 @@
     </script>
 <body style='margin : 0px; overflow: hidden;'>
 
-  <a-scene embedded arjs>
+    <a-scene embedded arjs>
 
-    <a-assets>              <!-- link below is where the duck gltf file is located -->
-    <a-asset-item id="tree" src="https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Models/master/2.0/Duck/glTF/Duck.gltf"></a-asset-item>
-</a-assets>
+        <a-assets>              <!-- link below is where the duck gltf file is located -->
+            <a-asset-item id="tree" src="https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Models/master/2.0/Duck/glTF/Duck.gltf"></a-asset-item>
+        </a-assets>
 <!-- use your gltf model -->
 
-    <a-marker-camera preset="hiro" >   <!-- id needed to be behind the marker added id tag here -->
-      <a-entity id="myEnt"  position = "0 0 -1" scale="1 1 1" gltf-model="#tree" rotation="0 -90 90"></a-entity>
+        <a-marker preset="hiro" >   <!-- id needed to be behind the marker added id tag here -->
+            <a-entity id="myEnt"  position = "0 0 -1" scale="1 1 1" gltf-model="#tree" rotation="0 -90 90"></a-entity>
                     <!-- don't change roation PLEASE it keeps duck facing us :) -->
-    </a-marker-camera>
+        </a-marker>
+        
+        <a-entity camera></a-entity>
 
 </a-scene>
+    
 <button class="button" onclick="shrinkDuck()">Attack!</button>
+    
 <script type="text/javascript">
     var size = 1;
     var position = -1;
