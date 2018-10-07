@@ -41,12 +41,12 @@
         myEnt.setAttribute('scale', {x: size, y: size,  z: size} );
         myEnt.setAttribute('position', {x: 0, y : 0, z:position});
         var audio = new Audio('PEW.mp3');
-         audio.play();
+        audio.play();
      }
      else{
          myEnt.setAttribute('scale',{x:0,y:0,z:0});
-//         var audioEnd = new Audio('VICTORY.mp3');
-//         audioEnd.play();
+         var audioEnd = new Audio('VICTORY.mp3');
+         audioEnd.play();
          alert("The duck has been defeated >:)");
          
      }
