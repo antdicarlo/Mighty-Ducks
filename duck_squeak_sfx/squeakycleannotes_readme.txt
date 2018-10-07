@@ -1,12 +1,10 @@
 Squeaky Clean Notes
 (Notes on the squeak mp3 files)
 
-Ranked from lowest to highest pitch
+Ranked by attack value from 1 to 5 pts
 
-squeak1: lower pitch squeak, need to crop to single squeak
-squeak2: one (1) lower-middle pitch squeak
-squeak3: one (1) medium pitch squeak
-squeak4: weak, airy squeak, need to crop to single squeak
-squeak5: high pitch squeak, need to crop out "audiogem" portion
-
-should make squeak 4 for pt value = 1 (if do random pt values)
+squeak_1: weak, airy squeak, need to crop to single squeak
+squeak_2: lower pitch squeak, need to crop to single squeak
+squeak_3: one (1) lower-middle pitch squeak
+squeak_4: one (1) medium pitch squeak
+squeak_5: high pitch squeak, need to crop out "audiogem" portion
