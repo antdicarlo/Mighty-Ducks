@@ -1,6 +1,8 @@
 # THE MIGHTY DUCKS
 as of October 7, 2018 at 07:44am
 
+https://devpost.com/software/the-mighty-ducks
+
 Summary:
 Tired of hacking all night? Frustrated with debugging? Now you can take it out on an AR debugging rubber duck!
 Open our AR game controller on your mobile device, direct the camera at a marker image, and the duck appears ready
